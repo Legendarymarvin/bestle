@@ -9,14 +9,17 @@ pub fn create_block_result(params: &mut Parameters) -> String {
     result.push_str("\n\n");
 
     if is_row_layout(params) {
-        return create_row_result(params, &colours, &mut result);
+        result = create_row_result(params, &colours, &mut result);
     }
 
     if is_column_layout(params) {
-        return create_column_result(params, &colours, &mut result);
+        result = create_column_result(params, &colours, &mut result);
     }
 
-    return create_tabular_result(params, colours, &mut result);
+    result = create_tabular_result(params, colours, &mut result);
+
+    result.push_str("\n\nhttps://github.com/metz-dev/bestle");
+    result
 }
 
 fn is_row_layout(params: &mut Parameters) -> bool {
