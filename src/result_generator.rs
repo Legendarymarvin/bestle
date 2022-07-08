@@ -10,13 +10,11 @@ pub fn create_block_result(params: &mut Parameters) -> String {
 
     if is_row_layout(params) {
         result = create_row_result(params, &colours, &mut result);
-    }
-
-    if is_column_layout(params) {
+    } else if is_column_layout(params) {
         result = create_column_result(params, &colours, &mut result);
+    } else {
+        result = create_tabular_result(params, colours, &mut result);
     }
-
-    result = create_tabular_result(params, colours, &mut result);
 
     result.push_str("\n\nhttps://github.com/metz-dev/bestle");
     result
