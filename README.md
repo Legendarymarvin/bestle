@@ -1,3 +1,5 @@
+![screenshot](https://github.com/metz-dev/bestle/blob/main/screenshots/1.png)
+
 # What is this?
 
 It's a little Gui application written in Rust that generates randomized block-results in the style of wordle and all its copycats.
